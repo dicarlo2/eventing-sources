@@ -40,6 +40,11 @@ type GitHubSourceSpec struct {
 	// +optional
 	ServiceAccountName string `json:"serviceAccountName,omitempty"`
 
+	// ObjectMeta holds the Kubernetes object metadata that should be applied
+	// to the underlying Knative Serving RevisionTemplateSpec.
+	// +optional
+	ObjectMeta metav1.ObjectMeta `json:"metadata,omitempty"`
+
 	// OwnerAndRepository is the GitHub owner/org and repository to
 	// receive events from. The repository may be left off to receive
 	// events from an entire organization.

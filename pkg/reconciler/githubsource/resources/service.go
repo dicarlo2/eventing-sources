@@ -56,6 +56,7 @@ func MakeService(source *sourcesv1alpha1.GitHubSource, receiveAdapterImage strin
 			RunLatest: &servingv1alpha1.RunLatestType{
 				Configuration: servingv1alpha1.ConfigurationSpec{
 					RevisionTemplate: servingv1alpha1.RevisionTemplateSpec{
+						ObjectMeta: source.Spec.ObjectMeta,
 						Spec: servingv1alpha1.RevisionSpec{
 							ServiceAccountName: source.Spec.ServiceAccountName,
 							Container: corev1.Container{
